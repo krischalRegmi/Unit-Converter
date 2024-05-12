@@ -1,0 +1,41 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #00d4a9;
+    color: white;
+}
+
+div {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    
+}   
+
+.box {
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+.inputbox {
+    margin: 10px auto;
+    width: 100%;
+}
+
+button{
+    margin: 10px auto;
+    width: 70%;
+}

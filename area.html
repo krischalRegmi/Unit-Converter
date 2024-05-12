@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+    <link rel="stylesheet" href="converter.css">
+</head>
+
+<body>
+    <h1>Area Converter</h1>
+    <div class="box">
+        <div class="inputbox">
+            <label for="inputUnit">Input:</label>
+            <input type="number" id="inputUnit">
+            <select id="unitType">
+                <option selected disabled>Select Unit</option>
+                <option value="bigha">Bigha</option>
+                <option value="kattha">Kattha</option>
+                <option value="dhur">Dhur</option>
+                <option value="ropani">Ropani</option>
+                <option value="aana">Aana</option>
+                <option value="paisa">Paisa</option>
+                <option value="dam">Dam</option>
+                <option value="sq.feet">Sq.Feet</option>
+
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="inputbox">
+            <label for="outputUnit">Output:</label>
+            <input type="text" id="outputUnit" disabled>
+            <select id="outputUnitType">
+                <option selected disabled>Select Unit</option>
+                <option value="bigha">Bigha</option>
+                <option value="kattha">Kattha</option>
+                <option value="dhur">Dhur</option>
+                <option value="ropani">Ropani</option>
+                <option value="aana">Aana</option>
+                <option value="paisa">Paisa</option>
+                <option value="dam">Dam</option>
+                <option value="sq.feet">Sq.Feet</option>
+
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <button onclick="convert()">Convert</button>
+
+    </div>
+
+    <script src="area.js"></script>
+</body>
+
+</html>
