@@ -123,7 +123,5 @@ function convert() {
         result = input;
     }
 
-    // Add more conversion logic for other units if needed
-
     document.getElementById("outputUnit").value = result;
 }
