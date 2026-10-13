@@ -54,3 +54,52 @@ h1 {
   box-shadow: 10px 10px 5px 3px rgba(0,0,0,0.68);
   transition: 0.5s;
 }
+
+
+.install-popup {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(90%, 420px);
+  padding: 16px;
+  background: #fff;
+  color: #1f2937;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px #0002;
+  z-index: 9999;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.install-popup[hidden] {
+  display: none;
+}
+
+.install-popup h3 {
+  margin: 0 0 5px;
+}
+
+.install-popup p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.install-popup button {
+  padding: 9px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#installBtn {
+  background: #2563eb;
+  color: white;
+}
+
+#closeInstall {
+  background: #f3f4f6;
+}
