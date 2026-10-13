@@ -1,55 +1,72 @@
 function convert() {
-    const input = parseFloat(document.getElementById("inputUnit").value);
-    const inputType = document.getElementById("unitType").value;
-    const outputType = document.getElementById("outputUnitType").value;
-    let inputHours;
-    let result;
+  const input = parseFloat(document.getElementById("inputUnit").value);
+  const inputType = document.getElementById("unitType").value;
+  const outputType = document.getElementById("outputUnitType").value;
+  let inputHours;
+  let result;
 
-    //Validate input and unit types
-    if (isNaN(input) || input < 0) {
-        document.getElementById("outputUnit").value ="Please enter a valid non-negative number for the input.";
-        console.log(result);
-        return;
-    } else if (inputType === "Select Unit" || outputType === "Select Unit") {
-        document.getElementById("outputUnit").value = "Please select both input and output unit types.";
-        console.log(result);
-        
-        return;
-    }
+  //Validate input and unit types
+  if (isNaN(input) || input < 0) {
+    document.getElementById("outputUnit").value =
+      "Please enter a valid non-negative number for the input.";
+    console.log(result);
+    return;
+  } else if (inputType === "Select Unit" || outputType === "Select Unit") {
+    document.getElementById("outputUnit").value =
+      "Please select both input and output unit types.";
+    console.log(result);
 
-    // Convert input to hours
-    if (inputType === "hours") {
-        inputHours = input;
-    } else if (inputType === "minutes") {
-        inputHours = input / 60;
-    } else if (inputType === "seconds") {
-        inputHours = input / 3600;
-    } else if (inputType === "days") {
-        inputHours = input * 24;
-    } else if (inputType === "weeks") {
-        inputHours = input * 168;
-    } else if (inputType === "months") {
-        inputHours = input * 730.001; 
-    } else if (inputType === "years") {
-        inputHours = input * 8760;
-    }
+    return;
+  }
 
-    // Convert hours to output unit
-    if (outputType === "hours") {
-        result = inputHours;
-    } else if (outputType === "minutes") {
-        result = inputHours * 60;
-    } else if (outputType === "seconds") {
-        result = inputHours * 3600;
-    } else if (outputType === "days") {
-        result = inputHours / 24;
-    } else if (outputType === "weeks") {
-        result = inputHours / 168;
-    } else if (outputType === "months") {
-        result = inputHours / 730.001;
-    } else if (outputType === "years") {
-        result = inputHours / 8760;
-    }
+  // Convert input to hours
+  if (inputType === "hours") {
+    inputHours = input;
+  } else if (inputType === "minutes") {
+    inputHours = input / 60;
+  } else if (inputType === "seconds") {
+    inputHours = input / 3600;
+  } else if (inputType === "days") {
+    inputHours = input * 24;
+  } else if (inputType === "weeks") {
+    inputHours = input * 168;
+  } else if (inputType === "months") {
+    inputHours = input * 730.001;
+  } else if (inputType === "years") {
+    inputHours = input * 8760;
+  }
 
-    document.getElementById("outputUnit").value = result;
+  // Convert hours to output unit
+  if (outputType === "hours") {
+    result = inputHours;
+  } else if (outputType === "minutes") {
+    result = inputHours * 60;
+  } else if (outputType === "seconds") {
+    result = inputHours * 3600;
+  } else if (outputType === "days") {
+    result = inputHours / 24;
+  } else if (outputType === "weeks") {
+    result = inputHours / 168;
+  } else if (outputType === "months") {
+    result = inputHours / 730.001;
+  } else if (outputType === "years") {
+    result = inputHours / 8760;
+  }
+
+  //Format and display the result
+  result = result.toLocaleString("en-IN", {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 2,
+  });
+  document.getElementById("outputUnit").value = result;
+}
+
+//swap function to swap the input and output unit types
+swap = () => {
+  const inputUnitElement = document.getElementById("unitType");
+  const outputUnitElement = document.getElementById("outputUnitType");
+  const temp = inputUnitElement.value;
+  inputUnitElement.value = outputUnitElement.value;
+  outputUnitElement.value = temp;
+  convert();
 }

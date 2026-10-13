@@ -76,6 +76,16 @@ button:hover {
     background-color: #0069d9;
 }
 
+.swapbtn {
+    background-color: #28a745;
+    width: 20%;
+    padding: 10px;
+}
+
+.swapbtn:hover {
+    background-color: #218838;
+}
+
 #outputUnit {
     background-color: #f0f0f0;
     pointer-events: none; /* Disable editing */

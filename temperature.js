@@ -1,44 +1,55 @@
 function convert() {
-    const input = parseFloat(document.getElementById("inputUnit").value);
-    const inputType = document.getElementById("unitType").value;
-    const outputType = document.getElementById("outputUnitType").value;
+  const input = parseFloat(document.getElementById("inputUnit").value);
+  const inputType = document.getElementById("unitType").value;
+  const outputType = document.getElementById("outputUnitType").value;
 
-    let result;
+  let result;
 
-    // validate input and unit types
-    if (isNaN(input) || input < 0) {
-        document.getElementById("outputUnit").value ="Please enter a valid non-negative number for the input.";
-        console.log(result);
-        return;
-    } else if (inputType === "Select Unit" || outputType === "Select Unit") {
-        document.getElementById("outputUnit").value = "Please select both input and output unit types.";
-        console.log(result);
-        
-        return;
-    }
+  // validate input and unit types
+  if (isNaN(input) || input < 0) {
+    document.getElementById("outputUnit").value =
+      "Please enter a valid non-negative number for the input.";
+    console.log(result);
+    return;
+  } else if (inputType === "Select Unit" || outputType === "Select Unit") {
+    document.getElementById("outputUnit").value =
+      "Please select both input and output unit types.";
+    console.log(result);
 
-    // Conversion logic
-    if (inputType === "c" && outputType === "f") {
-        result = (input * 9 / 5) + 32;
-    }
-    else if (inputType === "f" && outputType === "c") {
-        result = (input - 32) * 5 / 9;
-    }
-    else if (inputType === "c" && outputType === "k") {
-        result = input + 273.15;
-    }
-    else if (inputType === "k" && outputType === "c") {
-        result = input - 273.15;
-    }
-    else if (inputType === "f" && outputType === "k") {
-        result = (input - 32) * 5 / 9 + 273.15;
-    }
-    else if (inputType === "k" && outputType === "f") {
-        result = (input - 273.15) * 9 / 5 + 32;
-    }
-    else if (inputType === outputType) {
-        result = input;
-    }
+    return;
+  }
 
-    document.getElementById("outputUnit").value = result;
+  // Conversion logic
+  if (inputType === "c" && outputType === "f") {
+    result = (input * 9) / 5 + 32;
+  } else if (inputType === "f" && outputType === "c") {
+    result = ((input - 32) * 5) / 9;
+  } else if (inputType === "c" && outputType === "k") {
+    result = input + 273.15;
+  } else if (inputType === "k" && outputType === "c") {
+    result = input - 273.15;
+  } else if (inputType === "f" && outputType === "k") {
+    result = ((input - 32) * 5) / 9 + 273.15;
+  } else if (inputType === "k" && outputType === "f") {
+    result = ((input - 273.15) * 9) / 5 + 32;
+  } else if (inputType === outputType) {
+    result = input;
+  }
+
+  //Format and display the result
+  result = result.toLocaleString("en-IN", {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 2,
+  });
+  document.getElementById("outputUnit").value = result;
+}
+
+//swap function to swap the input and output unit types
+swap = () => {
+  const inputUnitElement = document.getElementById("unitType");
+  const outputUnitElement = document.getElementById("outputUnitType");
+  const temp = inputUnitElement.value;
+  inputUnitElement.value = outputUnitElement.value;
+  outputUnitElement.value = temp;
+  convert();
 }

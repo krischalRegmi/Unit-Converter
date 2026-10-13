@@ -1,63 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Unit Converter</title>
-    <link rel="stylesheet" href="converter.css">
-</head>
+    <link rel="stylesheet" href="converter.css" />
+  </head>
 
-<body>
+  <body>
     <h1>Land Area Converter (with Nepali Units)</h1>
     <div class="box">
-        <div class="inputbox">
-            <label for="inputUnit">Input:</label>
-            <input type="number" id="inputUnit">
-            <select id="unitType">
-                <option selected disabled>Select Unit</option>
-                <option value="bigha">Bigha</option>
-                <option value="kattha">Kattha</option>
-                <option value="dhur">Dhur</option>
-                <option value="ropani">Ropani</option>
-                <option value="aana">Aana</option>
-                <option value="paisa">Paisa</option>
-                <option value="dam">Dam</option>
-                <option value="sq.feet">Sq.Feet</option>
-                <option value="sq.meter">Sq.Meter</option>
-                <option value="sq.km">Sq.Km</option>
-                <option value="sq.mile">Sq.Mile</option>
-                <option value="acre">Acre</option>
-                <option value="hectare">Hectare</option>
-                <option value="sq.yard">Sq.Yard</option>
-            </select>
-        </div>
-        <div class="inputbox">
-            <label for="outputUnit">Output:</label>
-            <input type="text" id="outputUnit" disabled>
-            <select id="outputUnitType">
-                <option selected disabled>Select Unit</option>
-                <option value="bigha">Bigha</option>
-                <option value="kattha">Kattha</option>
-                <option value="dhur">Dhur</option>
-                <option value="ropani">Ropani</option>
-                <option value="aana">Aana</option>
-                <option value="paisa">Paisa</option>
-                <option value="dam">Dam</option>
-                <option value="sq.feet">Sq.Feet</option>
-                <option value="sq.meter">Sq.Meter</option>
-                <option value="sq.km">Sq.Km</option>
-                <option value="sq.mile">Sq.Mile</option>
-                <option value="acre">Acre</option>
-                <option value="hectare">Hectare</option>
-                <option value="sq.yard">Sq.Yard</option>
-            </select>
-        </div>
+      <div class="inputbox">
+        <label for="inputUnit">Input:</label>
+        <input type="number" id="inputUnit" />
+        <select id="unitType">
+          <option selected disabled>Select Unit</option>
+          <option value="bigha">Bigha</option>
+          <option value="kattha">Kattha</option>
+          <option value="dhur">Dhur</option>
+          <option value="ropani">Ropani</option>
+          <option value="aana">Aana</option>
+          <option value="paisa">Paisa</option>
+          <option value="dam">Dam</option>
+          <option value="sq.feet">Sq.Feet</option>
+          <option value="sq.meter">Sq.Meter</option>
+          <option value="sq.km">Sq.Km</option>
+          <option value="sq.mile">Sq.Mile</option>
+          <option value="acre">Acre</option>
+          <option value="hectare">Hectare</option>
+          <option value="sq.yard">Sq.Yard</option>
+        </select>
+      </div>
+      <div class="inputbox">
+        <label for="outputUnit">Output:</label>
+        <input type="text" id="outputUnit" disabled />
+        <select id="outputUnitType">
+          <option selected disabled>Select Unit</option>
+          <option value="bigha">Bigha</option>
+          <option value="kattha">Kattha</option>
+          <option value="dhur">Dhur</option>
+          <option value="ropani">Ropani</option>
+          <option value="aana">Aana</option>
+          <option value="paisa">Paisa</option>
+          <option value="dam">Dam</option>
+          <option value="sq.feet">Sq.Feet</option>
+          <option value="sq.meter">Sq.Meter</option>
+          <option value="sq.km">Sq.Km</option>
+          <option value="sq.mile">Sq.Mile</option>
+          <option value="acre">Acre</option>
+          <option value="hectare">Hectare</option>
+          <option value="sq.yard">Sq.Yard</option>
+        </select>
+      </div>
+      <div>
         <button onclick="convert()">Convert</button>
-
+        <button class="swapbtn" onclick="swap()">Swap</button>
+      </div>
     </div>
 
     <script src="area.js"></script>
-</body>
-
+  </body>
 </html>
