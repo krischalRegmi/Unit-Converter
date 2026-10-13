@@ -5,6 +5,18 @@ function convert() {
 
     let result;
 
+    // validate input and unit types
+    if (isNaN(input) || input < 0) {
+        document.getElementById("outputUnit").value ="Please enter a valid non-negative number for the input.";
+        console.log(result);
+        return;
+    } else if (inputType === "Select Unit" || outputType === "Select Unit") {
+        document.getElementById("outputUnit").value = "Please select both input and output unit types.";
+        console.log(result);
+        
+        return;
+    }
+
     // Conversion logic
     if (inputType === "c" && outputType === "f") {
         result = (input * 9 / 5) + 32;

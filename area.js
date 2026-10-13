@@ -5,6 +5,18 @@ function convert() {
     let inputSquareFeet;
     let result;
 
+    //Validate input and unit types
+    if (isNaN(input) || input < 0) {
+        document.getElementById("outputUnit").value ="Please enter a valid non-negative number for the input.";
+        console.log(result);
+        return;
+    } else if (inputType === "Select Unit" || outputType === "Select Unit") {
+        document.getElementById("outputUnit").value = "Please select both input and output unit types.";
+        console.log(result);
+        
+        return;
+    }
+
     // Convert input to square feet
     if (inputType === "bigha") {
         inputSquareFeet = input * 72900;
@@ -34,7 +46,7 @@ function convert() {
         inputSquareFeet = input * 107639.104;
     } else if (inputType === "sq.yard") {
         inputSquareFeet = input * 9;
-    }
+    } 
 
     // Convert square feet to output unit
     if (outputType === "bigha") {
