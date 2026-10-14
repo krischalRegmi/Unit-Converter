@@ -75,6 +75,10 @@ h1 {
   gap: 12px;
 }
 
+.install-popup div{
+  margin: auto;
+}
+
 .install-popup[hidden] {
   display: none;
 }
@@ -93,6 +97,7 @@ h1 {
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  margin: auto;
 }
 
 #installBtn {
@@ -102,4 +107,5 @@ h1 {
 
 #closeInstall {
   background: #f3f4f6;
+  margin:auto;
 }
