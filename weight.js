@@ -28,9 +28,11 @@ function convert() {
     inputkg = input * 0.453592;
   } else if (inputType === "oz") {
     inputkg = input * 0.0283495;
+  } else if (inputType === "t") {
+    inputkg = input * 1000;
   } else if (inputType === "ust") {
     inputkg = input * 907.185;
-  } else if (inputType === "ukst") {
+  } else if (inputType === "ukt") {
     inputkg = input * 1016.05;
   }
 
@@ -43,9 +45,11 @@ function convert() {
     result = inputkg / 0.453592;
   } else if (outputType === "oz") {
     result = inputkg / 0.0283495;
+  } else if (outputType === "t") {
+    result = inputkg / 1000;
   } else if (outputType === "ust") {
     result = inputkg / 907.185;
-  } else if (outputType === "ukst") {
+  } else if (outputType === "ukt") {
     result = inputkg / 1016.05;
   }
 
